@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Multiply Me</title>
+	<style type="text/css">
+		body{
+			background-image: url("bg.jpg");
+			height: 100%;
+    		margin: 0;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+		}	
+		html {
+			cursor: url("rick.cur"), auto;
+		}
+		.glow {
+		font-size: 80px;
+		color: white;
+		text-align: center;
+		animation: glow 1s ease-in-out infinite alternate;
+		}
+
+		@-webkit-keyframes glow {
+	  	from {
+	    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  	}
+  
+ 	 	to {
+    	text-shadow: 0 0 20px orange, 0 0 30px yellow, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+ 	 }
+
+	</style>
+</head>
+<body>
+
+	<div style="text-align: center; font-size: 2rem;">
+		<h1 style="font-family: 'Georgia'; text-shadow: 1px 1px black;color: orange;">Let's Multiply</h1>
+		<form>
+			<label style="color: red;text-shadow: 1px 1px black; font-weight: bold;" for="num1">Number 1:</label>
+			<input style="font-size: 1.3rem;" id="num1" name="num1" type="number"/>
+			<br/>
+			<br/>
+			<label style="color: red;text-shadow: 1px 1px black; font-weight: bold;" for="num2">Number 2:</label>
+			<input style="font-size: 1.3rem;" id="num2" name="num2" type="number"/>
+			<br/>
+			<br/>
+			<input id="button" type="button" value="Show me what you got!" style="color:white; background-color: orange; width: 200px; height: 50px; border-radius: 24px; font-size: 16px; box-shadow: 2px 2px 6px black;"/>
+			<h3 class ="glow" style="color:white;text-shadow: 1px 1px 1px black; font-size: 5rem;" id="product"></h3>
+		</form>
+	</div>
+
+<audio id="show" src="showme.mp3"></audio>
+
+	<script>
+	document.getElementById("button").onclick = function() {myFunction()};
+		
+		function myFunction() {
+		var x = document.getElementById("num1").value;
+		var y = document.getElementById("num2").value;
+		var result = x*y;
+		document.getElementById("product").innerHTML = result;
+		document.getElementById("show").play();
+}
+
+	
+	</script>
+
+</body>
+
+</html>
